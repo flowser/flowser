@@ -28,6 +28,7 @@
   <a href="#what-i-can-build-for-you"><b>Services</b></a> ·
   <a href="#featured-work"><b>Featured work</b></a> ·
   <a href="#private-work-index"><b>Private work</b></a> ·
+  <a href="#engineering-telemetry"><b>Telemetry</b></a> ·
   <a href="#case-studies"><b>Case studies</b></a> ·
   <a href="#experience"><b>Experience</b></a> ·
   <a href="#tech-stack"><b>Tech stack</b></a> ·
@@ -196,14 +197,96 @@ sequenceDiagram
   end
 ```
 
-| App | Used by | What it does | Built with |
-|---|---|---|---|
-| **SystemMate** (KNEC and CDACC editions) | Staff, heads of department, registrar | Exam authoring, marking and release; LMS with syllabus, schemes of work, notes and live Campus Meet sessions; results and transcripts | Electron Forge, Vue 3, TypeScript, Pinia, TanStack Query |
-| **ExamMate** (KNEC and CDACC editions) | Trainees | Secure exam sitting with a display guard and site blocking; lessons; results | Electron, Vue 3, TypeScript |
-| **Practicum Field / Attachment Field** | Supervisors | Teaching-practice and industrial-attachment visits, rubrics and attendance, offline-first with sync | Capacitor, Vue 3 (Android) |
-| **Institution API** | All apps | Multi-tenant REST API, JWT auth, background jobs, real-time events, per-exam-type proctoring policy | Django REST, PostgreSQL, Redis, Celery, Soketi, nginx |
-| **AI service** | On campus | Face match, RAG learning assistant, marking assist and agents, on the college's own hardware | FastAPI, InsightFace, Ollama |
-| **Vendor control plane** | Savvytex | Plans, subscriptions, releases and Ed25519-signed licence files that work offline | Django, PostgreSQL |
+<table>
+<tr>
+<td width="33%" valign="top">
+
+**🖥️ SystemMate**<br/>
+<sub>STAFF · HODS · REGISTRAR · KNEC + CDACC</sub>
+
+Exam authoring with maths, marking and release; LMS with syllabus, schemes of work, notes and live Campus Meet; results and transcripts.
+
+<img src="https://img.shields.io/badge/701-commits-4f46e5?style=flat-square&labelColor=16162a" alt="701 commits"/><br/>
+<img src="https://img.shields.io/badge/Electron-2b2e3a?style=flat-square&logo=electron&logoColor=9feaf9" alt="Electron"/> <img src="https://img.shields.io/badge/Vue_3-35495e?style=flat-square&logo=vuedotjs&logoColor=4fc08d" alt="Vue 3"/> <img src="https://img.shields.io/badge/TypeScript-3178c6?style=flat-square&logo=typescript&logoColor=ffffff" alt="TypeScript"/> <img src="https://img.shields.io/badge/Pinia-f7d336?style=flat-square" alt="Pinia"/>
+
+</td>
+<td width="33%" valign="top">
+
+**🔒 ExamMate**<br/>
+<sub>TRAINEES · KNEC + CDACC</sub>
+
+Locked-down exam sitting with a display guard and site blocking, face check when the exam type needs it; lessons and results.
+
+<img src="https://img.shields.io/badge/265-commits-0284c7?style=flat-square&labelColor=16162a" alt="265 commits"/><br/>
+<img src="https://img.shields.io/badge/Electron-2b2e3a?style=flat-square&logo=electron&logoColor=9feaf9" alt="Electron"/> <img src="https://img.shields.io/badge/Vue_3-35495e?style=flat-square&logo=vuedotjs&logoColor=4fc08d" alt="Vue 3"/> <img src="https://img.shields.io/badge/Soketi-0284c7?style=flat-square" alt="Soketi"/>
+
+</td>
+<td width="33%" valign="top">
+
+**⚙️ Institution API**<br/>
+<sub>EVERY APP</sub>
+
+Multi-tenant REST API: JWT auth, per-exam-type proctoring policy, real-time events, device workers.
+
+<img src="https://img.shields.io/badge/382-commits-ea580c?style=flat-square&labelColor=16162a" alt="382 commits"/><br/>
+<img src="https://img.shields.io/badge/Django_REST-092e20?style=flat-square&logo=django&logoColor=ffffff" alt="Django REST"/> <img src="https://img.shields.io/badge/PostgreSQL-4169e1?style=flat-square&logo=postgresql&logoColor=ffffff" alt="PostgreSQL"/> <img src="https://img.shields.io/badge/Redis-dc382d?style=flat-square&logo=redis&logoColor=ffffff" alt="Redis"/> <img src="https://img.shields.io/badge/nginx-009639?style=flat-square&logo=nginx&logoColor=ffffff" alt="nginx"/>
+
+</td>
+</tr>
+<tr>
+<td width="33%" valign="top">
+
+**📱 Field apps**<br/>
+<sub>SUPERVISORS · PRACTICUM + ATTACHMENT</sub>
+
+Teaching-practice and industrial-attachment visits, rubrics and attendance. Works offline, syncs when back in signal.
+
+<img src="https://img.shields.io/badge/48-commits-059669?style=flat-square&labelColor=16162a" alt="48 commits"/><br/>
+<img src="https://img.shields.io/badge/Capacitor-119eff?style=flat-square&logo=capacitor&logoColor=ffffff" alt="Capacitor"/> <img src="https://img.shields.io/badge/Vue_3-35495e?style=flat-square&logo=vuedotjs&logoColor=4fc08d" alt="Vue 3"/> <img src="https://img.shields.io/badge/Android-3ddc84?style=flat-square&logo=android&logoColor=ffffff" alt="Android"/>
+
+</td>
+<td width="33%" valign="top">
+
+**🧠 AI service**<br/>
+<sub>ON CAMPUS HARDWARE</sub>
+
+Face verification, a RAG learning assistant over course material, marking assist and agents. No student data leaves the building.
+
+<img src="https://img.shields.io/badge/53-commits-9333ea?style=flat-square&labelColor=16162a" alt="53 commits"/><br/>
+<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=ffffff" alt="FastAPI"/> <img src="https://img.shields.io/badge/InsightFace-9333ea?style=flat-square" alt="InsightFace"/> <img src="https://img.shields.io/badge/ONNX-005ced?style=flat-square&logo=onnx&logoColor=ffffff" alt="ONNX"/> <img src="https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=ffffff" alt="Ollama"/>
+
+</td>
+<td width="33%" valign="top">
+
+**🔑 Vendor control plane**<br/>
+<sub>SAVVYTEX</sub>
+
+Plans, subscriptions, releases and Ed25519-signed licence files that campuses verify offline.
+
+<img src="https://img.shields.io/badge/12-commits-db2777?style=flat-square&labelColor=16162a" alt="12 commits"/><br/>
+<img src="https://img.shields.io/badge/Django-092e20?style=flat-square&logo=django&logoColor=ffffff" alt="Django"/> <img src="https://img.shields.io/badge/Ed25519-db2777?style=flat-square" alt="Ed25519"/>
+
+</td>
+</tr>
+</table>
+
+<!-- telemetry:aemms -->
+**AEMMS by the numbers**
+
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="assets/theme/aemms-stats-light.svg"/>
+  <img src="assets/theme/aemms-stats-dark.svg" width="100%" alt="AEMMS: API routes, data models, Vue components, automated tests"/>
+</picture>
+
+<p align="center"><img src="https://img.shields.io/badge/56-service_modules-0ea5e9?style=flat-square&labelColor=16162a" alt="56 service modules"/> <img src="https://img.shields.io/badge/61-desktop_IPC_handlers-9333ea?style=flat-square&labelColor=16162a" alt="61 desktop IPC handlers"/> <img src="https://img.shields.io/badge/13-CI_workflows-34d399?style=flat-square&labelColor=16162a" alt="13 CI workflows"/></p>
+
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="assets/theme/aemms-donuts-light.svg"/>
+  <img src="assets/theme/aemms-donuts-dark.svg" width="100%" alt="AEMMS commits by app (1,461) and code by language"/>
+</picture>
+
+<sub>Measured from git on 2026-09-27 by <code>telemetry.py</code>: tracked files only, non-blank lines, CDACC forks counted once; dependencies, builds, migrations and third-party themes excluded.</sub>
+<!-- /telemetry:aemms -->
 
 ➡️ **[Read the AEMMS case study](case-studies/aemms-platform.md)** · **[See screenshots in the showcase repo](https://github.com/flowser/aemms-showcase)**
 
@@ -370,6 +453,58 @@ Most of what I build is client or product IP, so the source is private. This is 
   <tr><th colspan="3" align="left">🧭 Solution architecture</th></tr>
   <tr><td><b>Intelligent maize milling platform</b> <sub>(proposal)</sub></td><td>End-to-end design for a milling business: weighbridge intake, production and yield, warehouses, sales, KRA e-invoicing, M-Pesa reconciliation, offline field sync and an AI roadmap. Delivered as a technical breakdown, module maps and costed packages</td><td><sub>Architecture · Mermaid · BOQ</sub></td></tr>
 </table>
+
+<p align="center"><img width="100%" src="assets/theme/divider.svg" alt=""/></p>
+
+<sub><b>── BY THE NUMBERS</b></sub>
+
+## Engineering telemetry
+
+Most of my code is private, so GitHub's public graphs miss it. These charts are measured straight from the private repos.
+
+<!-- telemetry:portfolio -->
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="assets/theme/telemetry-stats-light.svg"/>
+  <img src="assets/theme/telemetry-stats-dark.svg" width="100%" alt="Portfolio totals: lines of code, commits, products, tests"/>
+</picture>
+
+**Every line by language**
+
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="assets/theme/languages-light.svg"/>
+  <img src="assets/theme/languages-dark.svg" width="100%" alt="Lines of code by language across all products"/>
+</picture>
+
+**Commits per month in 2026** <sub>(bars: all products · line: AEMMS · September to date)</sub>
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '14px', 'xyChart': {'backgroundColor': 'transparent', 'plotColorPalette': '#4f46e5, #f97316', 'titleColor': '#8b8ba7', 'xAxisLabelColor': '#8b8ba7', 'yAxisLabelColor': '#8b8ba7', 'xAxisTitleColor': '#8b8ba7', 'yAxisTitleColor': '#8b8ba7', 'xAxisLineColor': '#4f46e5', 'yAxisLineColor': '#4f46e5', 'xAxisTickColor': '#4f46e5', 'yAxisTickColor': '#4f46e5'}}, 'xyChart': {'width': 900, 'height': 380, 'plotReservedSpacePercent': 60}}}%%
+xychart-beta
+  x-axis ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"]
+  y-axis "Commits" 0 --> 700
+  bar [21, 14, 17, 96, 75, 663, 289, 142, 594]
+  line [0, 9, 15, 96, 75, 506, 257, 22, 481]
+```
+
+**Where the code lives: product by language**
+
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="assets/theme/products-light.svg"/>
+  <img src="assets/theme/products-dark.svg" width="100%" alt="Lines of code per product, split by language"/>
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="assets/theme/portfolio-donuts-light.svg"/>
+  <img src="assets/theme/portfolio-donuts-dark.svg" width="100%" alt="Commits by product and code by layer"/>
+</picture>
+
+- **1.03M lines** across six products, almost all written in the last ten months.
+- **1,461 commits** on AEMMS alone: 686 API routes and 145 data models behind 441 screens and components.
+- **873 automated tests** and 13 CI workflows guard releases.
+- **Full stack in one head:** Python back ends, TypeScript/Vue front ends, MQL5 trading code and PHP legacy systems, plus the networks and hardware they run on.
+
+<sub>Measured from git on 2026-09-27 with <code>telemetry.py</code>. Private repos only; tracked files, non-blank lines; CDACC forks counted once; dependencies, builds, migrations and third-party themes excluded.</sub>
+<!-- /telemetry:portfolio -->
 
 <p align="center"><img width="100%" src="assets/theme/divider.svg" alt=""/></p>
 
