@@ -543,12 +543,105 @@ xychart-beta
 
 ## Experience
 
-| When | Role | Highlights |
+Over ten years I've owned systems end to end, from the circuit board to the cloud and from the first diagram to the handover binder.
+
+**What you get when you hire me**
+
+<table>
+<tr>
+<td width="25%" valign="top">
+
+**🎯 One accountable engineer**<br/>
+<sub>OWNERSHIP</sub>
+
+Architecture, build, deployment and handover across software, networks and hardware. You don't have to coordinate three vendors.
+
+</td>
+<td width="25%" valign="top">
+
+**🛡️ Built for bad days**<br/>
+<sub>RESILIENCE</sub>
+
+Dual internet links, offline-first mobile apps, and an exam lockdown that keeps the admin office online. Things keep running when one part fails.
+
+</td>
+<td width="25%" valign="top">
+
+**📦 Handover, not lock-in**<br/>
+<sub>OPERABILITY</sub>
+
+Every deployment ships with an inventory and runbooks your own team can follow. The software runs on your servers, under a signed licence.
+
+</td>
+<td width="25%" valign="top">
+
+**⚡ Ships at pace**<br/>
+<sub>DELIVERY</sub>
+
+1,989 commits across six products in 2026. AEMMS went from its first commit in February to a live campus the same year.
+
+</td>
+</tr>
+</table>
+
+**Roles**
+
+<img src="https://img.shields.io/badge/2016_%E2%80%93_now-4f46e5?style=for-the-badge&labelColor=16162a" alt="2016 to now" align="absmiddle"/> &nbsp;<sub><b>FOUNDER · FULL TIME</b></sub>
+
+### 🏢 Founder and Lead Engineer · Savvytex Marines Ltd
+<sub>NAIROBI · REMOTE-READY · PRODUCT, ARCHITECTURE AND DELIVERY</sub>
+
+I set product direction and lead the engineering for everything the company ships.
+
+- **Designed AEMMS:** 10 codebases and 6 apps, in two regulator editions (KNEC and CDACC) on one shared architecture.
+- **Set the business model:** customers subscribe, but the system runs on the campus's own servers. Ed25519-signed licences control modules, seats and expiry.
+- **Built the product line:** NetworkMate (campus network control), the Savvytex company platform (website, operations, social publishing, licensing), VoteMate and TradeMate.
+- **Wrote the code:** 1.03M lines and 1,989 commits across 16 private repositories (measured, see [telemetry](#engineering-telemetry)).
+- **Design solutions with the client:** I work directly with college principals on local-network exams, named-user Wi-Fi and exam-week operations.
+
+<img src="https://img.shields.io/badge/Product_strategy-4f46e5?style=flat-square&labelColor=16162a" alt="Product strategy"/> <img src="https://img.shields.io/badge/System_architecture-4f46e5?style=flat-square&labelColor=16162a" alt="System architecture"/> <img src="https://img.shields.io/badge/Django-092e20?style=flat-square&logo=django&logoColor=ffffff" alt="Django"/> <img src="https://img.shields.io/badge/Vue_3-35495e?style=flat-square&logo=vuedotjs&logoColor=4fc08d" alt="Vue 3"/> <img src="https://img.shields.io/badge/Electron-2b2e3a?style=flat-square&logo=electron&logoColor=9feaf9" alt="Electron"/> <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=ffffff" alt="FastAPI"/>
+
+<img src="https://img.shields.io/badge/2026-0ea5e9?style=for-the-badge&labelColor=16162a" alt="2026" align="absmiddle"/> &nbsp;<sub><b>FLAGSHIP DEPLOYMENT</b></sub>
+
+### 🏫 Lead Engineer · Chesta Teachers Training College
+<sub>PRODUCTION CAMPUS STACK · TEACHING, ADMINISTRATION AND NATIONAL EXAM WEEKS</sub>
+
+| Problem | What I built | Result |
 |---|---|---|
-| **2016 – now** | **Founder and Lead Engineer**, Savvytex Marines Ltd | Own product and engineering for the AEMMS platform and campus network systems. Architect, build, deploy and hand over production systems. |
-| **2026** | **Lead Engineer**, Chesta Teachers Training College deployment | Dual-WAN, identity Wi-Fi, exam lockdown, AEMMS, self-hosted mail and video, operations runbooks. |
-| **2015 – now** | **Freelance Full-Stack, Firmware and Electronics Engineer** | Insurance platform, PAYGO e-bikes, smart home IoT, vending and M-Pesa, industrial diagnostics. |
-| **2022** | **Technical Service Provider** for Gaviton Enterprises, C.P. Power EA, Neural Power, Konza Elevators and Latenight Dentist | E-mobility battery management, SMA inverters, lift and escalator electronics, industrial plant. |
+| A single internet provider was a single point of failure | Starlink primary with Airtel failover on MikroTik | Teaching and admin stay online when one provider drops |
+| Shared Wi-Fi passwords, no idea who is online | FreeRADIUS + UniFi login with each trainee's assessment number, whole roster imported, device limits | A named user for every device |
+| Exams need the internet shut for students, not for the office | Separate student and staff networks, plus a gateway exam mode that allows only KNEC and SABE exam hosts | Exam lockdown with one switch, and administration keeps working |
+| Exams and results had to run on campus, not in someone else's cloud | AEMMS on campus with release control and transcripts; SystemMate and ExamMate clients | Exams, marking and results run on the campus's own hardware |
+| The college needed email and video meetings it controls | Self-hosted Mailcow mail and Jitsi video, NetworkMate ops portal, all on Proxmox | Communication the college owns |
+
+Handed over with an inventory for the principal and operations cookbooks for IT staff. Next phase: a fibre modernisation proposal with a bill of quantities (proposed, not built).
+
+<img src="https://img.shields.io/badge/Proxmox-e57000?style=flat-square&logo=proxmox&logoColor=ffffff" alt="Proxmox"/> <img src="https://img.shields.io/badge/MikroTik-293239?style=flat-square&logo=mikrotik&logoColor=ffffff" alt="MikroTik"/> <img src="https://img.shields.io/badge/FreeRADIUS-0ea5e9?style=flat-square&labelColor=16162a" alt="FreeRADIUS"/> <img src="https://img.shields.io/badge/UniFi-0559c9?style=flat-square&logo=ubiquiti&logoColor=ffffff" alt="UniFi"/> <img src="https://img.shields.io/badge/Mailcow-0ea5e9?style=flat-square&labelColor=16162a" alt="Mailcow"/> <img src="https://img.shields.io/badge/Jitsi-1d76ba?style=flat-square&logo=jitsi&logoColor=ffffff" alt="Jitsi"/>
+
+<img src="https://img.shields.io/badge/2015_%E2%80%93_now-f97316?style=for-the-badge&labelColor=16162a" alt="2015 to now" align="absmiddle"/> &nbsp;<sub><b>FREELANCE · CLIENT PROJECTS</b></sub>
+
+### 🛠️ Full-Stack, Firmware and Electronics Engineer · Freelance
+<sub>INSURANCE · MOBILITY · SMART HOME · RETAIL · INDUSTRIAL</sub>
+
+- **Insurance agency platform:** React / Next.js front end, Node and MySQL back end, Stripe payments.
+- **Pay-as-you-go e-bikes:** STM32 firmware in embedded C, plus a Laravel / Vue IoT backend that tracks payment status.
+- **Smart home control:** Arduino and Raspberry Pi devices, a Django server and an Android app, connected over MQTT and used day to day in a lived-in home.
+- **Vending with M-Pesa:** mobile-money payment modules for vending machines.
+- **Diagnostics and repair:** dental-chair automation, lift and escalator electronics, motherboards and appliances, plus a marketplace website where industrial clients post technical problems.
+
+<img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=ffffff" alt="Next.js"/> <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=ffffff" alt="Node.js"/> <img src="https://img.shields.io/badge/Stripe-635bff?style=flat-square&logo=stripe&logoColor=ffffff" alt="Stripe"/> <img src="https://img.shields.io/badge/Laravel-ff2d20?style=flat-square&logo=laravel&logoColor=ffffff" alt="Laravel"/> <img src="https://img.shields.io/badge/STM32-03234b?style=flat-square&logo=stmicroelectronics&logoColor=ffffff" alt="STM32"/> <img src="https://img.shields.io/badge/MQTT-660066?style=flat-square&logo=mqtt&logoColor=ffffff" alt="MQTT"/> <img src="https://img.shields.io/badge/M--Pesa-4caf50?style=flat-square&labelColor=16162a" alt="M-Pesa"/>
+
+<img src="https://img.shields.io/badge/2022-9333ea?style=for-the-badge&labelColor=16162a" alt="2022" align="absmiddle"/> &nbsp;<sub><b>CONTRACTS · 5 CLIENTS</b></sub>
+
+### ⚡ Technical Service Provider · Industrial and Energy Contracts
+<sub>GAVITON ENTERPRISES · C.P. POWER EA · NEURAL POWER · KONZA ELEVATORS · LATENIGHT DENTIST</sub>
+
+- **E-mobility battery management:** cell data sent to the cloud (MySQL), a web dashboard with alerts, and feedback to the motor controller.
+- **Solar and power:** commissioned SMA inverters, fixed faults on control boards, and built spare-parts inventory systems.
+- **Heavy plant:** motors, relays, overhead cranes, borehole and dosing pumps, generators and reverse-osmosis water systems.
+- **Lifts and escalators:** lift LED displays and industrial motherboards, and escalators reprogrammed on live sites under time pressure.
+
+<img src="https://img.shields.io/badge/Embedded_C-a8b9cc?style=flat-square&logo=c&logoColor=ffffff" alt="Embedded C"/> <img src="https://img.shields.io/badge/BMS_telemetry-9333ea?style=flat-square&labelColor=16162a" alt="BMS telemetry"/> <img src="https://img.shields.io/badge/SMA_inverters-cc0000?style=flat-square&labelColor=16162a" alt="SMA inverters"/> <img src="https://img.shields.io/badge/Power_electronics-9333ea?style=flat-square&labelColor=16162a" alt="Power electronics"/> <img src="https://img.shields.io/badge/PLC-9333ea?style=flat-square&labelColor=16162a" alt="PLC"/>
 
 **Engineering track record:**
 
