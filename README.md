@@ -176,11 +176,6 @@ I also build research tooling: Bayesian density-estimation simulations (PyMC), s
 </p>
 
 <p align="center">
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=flowser&theme=tokyonight" alt="GitHub stats"/>
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=flowser&theme=tokyonight&utcOffset=3" alt="Productive time"/>
-</p>
-
-<p align="center">
   <img src="https://streak-stats.demolab.com/?user=flowser&theme=tokyonight&hide_border=true&background=0d1117" alt="Contribution streak"/>
 </p>
 
