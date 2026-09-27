@@ -418,7 +418,7 @@ Most of what I build is client or product IP, so the source is private. This is 
 **Engineering track record:**
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontSize':'15px','primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#a5b4fc','lineColor':'#0ea5e9','titleColor':'#0ea5e9','cScale0':'#4f46e5','cScale1':'#0284c7','cScale2':'#b45309','cScale3':'#9333ea','cScale4':'#0d9488','cScale5':'#ea580c','cScaleLabel0':'#ffffff','cScaleLabel1':'#ffffff','cScaleLabel2':'#ffffff','cScaleLabel3':'#ffffff','cScaleLabel4':'#ffffff','cScaleLabel5':'#ffffff','cScaleInv0':'#0ea5e9','cScaleInv1':'#0ea5e9','cScaleInv2':'#0ea5e9','cScaleInv3':'#0ea5e9','cScaleInv4':'#0ea5e9','cScaleInv5':'#0ea5e9'}}%%
+%%{init: {'theme':'base','themeVariables':{'fontSize':'15px','primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#a5b4fc','lineColor':'#0ea5e9','titleColor':'#0ea5e9','cScale0':'#4f46e5','cScale1':'#0284c7','cScale2':'#b45309','cScale3':'#9333ea','cScale4':'#0d9488','cScale5':'#ea580c','cScaleLabel0':'#ffffff','cScaleLabel1':'#ffffff','cScaleLabel2':'#ffffff','cScaleLabel3':'#ffffff','cScaleLabel4':'#ffffff','cScaleLabel5':'#ffffff','cScaleInv0':'#0ea5e9','cScaleInv1':'#0ea5e9','cScaleInv2':'#0ea5e9','cScaleInv3':'#0ea5e9','cScaleInv4':'#0ea5e9','cScaleInv5':'#0ea5e9'}}}%%
 timeline
   2015 → : Freelance full-stack, firmware and electronics
        : Insurance platform · smart home · vending with M-Pesa
@@ -479,12 +479,18 @@ timeline
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontSize':'15px','primaryColor':'#16162a','primaryTextColor':'#f0f0ff','primaryBorderColor':'#4f46e5','lineColor':'#0ea5e9','edgeLabelBackground':'#16162a'}}}%%
-flowchart LR
-  A(["💬 Message<br/>email · WhatsApp"]):::s1 --> B(["📞 30-min call<br/>your timezone"]):::s2
-  B --> C(["📝 Proposal<br/>scope · price"]):::s3
-  C --> D(["🛠️ Build<br/>weekly demos"]):::s4
-  D --> E(["🚀 Deploy<br/>cloud or on-prem"]):::s5
-  E --> F(["📚 Handover<br/>docs · runbooks"]):::s6
+flowchart TB
+  subgraph r1[" "]
+    direction LR
+    A(["💬 Message<br/>email · WhatsApp"]):::s1 --> B(["📞 30-min call<br/>your timezone"]):::s2 --> C(["📝 Proposal<br/>scope · price"]):::s3
+  end
+  subgraph r2[" "]
+    direction LR
+    D(["🛠️ Build<br/>weekly demos"]):::s4 --> E(["🚀 Deploy<br/>cloud or on-prem"]):::s5 --> F(["📚 Handover<br/>docs · runbooks"]):::s6
+  end
+  r1 --> r2
+  style r1 fill:transparent,stroke:transparent
+  style r2 fill:transparent,stroke:transparent
   classDef s1 fill:#4f46e5,stroke:#a5b4fc,stroke-width:2px,color:#ffffff
   classDef s2 fill:#0284c7,stroke:#7dd3fc,stroke-width:2px,color:#ffffff
   classDef s3 fill:#0d9488,stroke:#5eead4,stroke-width:2px,color:#ffffff
