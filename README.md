@@ -105,7 +105,7 @@ flowchart TB
 
 **Engineering highlights:** multi-tenant Django REST API with JWT auth, Celery workers and WebSocket events · Electron Forge desktop apps with auto-update and installers for Windows, macOS and Linux · Capacitor mobile app with offline sync · Ed25519-signed licence files · FastAPI AI service with InsightFace and Ollama that keeps all data on-site · Docker locally, Proxmox containers in production.
 
-➡️ **[Read the AEMMS case study](case-studies/aemms-platform.md)**
+➡️ **[Read the AEMMS case study](case-studies/aemms-platform.md)** · **[See screenshots in the showcase repo](https://github.com/flowser/aemms-showcase)**
 
 ### 🌐 Live campus network build: Chesta Teachers Training College (2026)
 
@@ -170,7 +170,7 @@ Lead engineer for a full production deployment at a college in West Pokot, Kenya
       <img src="https://img.shields.io/badge/Stripe-635BFF?style=flat-square&logo=stripe&logoColor=white"/>
     </td>
     <td width="50%" valign="top">
-      <h4>TradeMate</h4>
+      <h4><a href="https://github.com/flowser/trademate-showcase">TradeMate</a></h4>
       MT5 scalping Expert Advisor with a Python monitoring app for 8 assets. Built risk-first: per-trade risk limits, daily loss caps, spread and news filters, no martingale.<br/><br/>
       <img src="https://img.shields.io/badge/MQL5-1E90FF?style=flat-square&logo=metatrader&logoColor=white"/>
       <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
@@ -232,6 +232,14 @@ Lead engineer for a full production deployment at a college in West Pokot, Kenya
     </td>
   </tr>
 </table>
+
+**Product showcases** with screenshots, architecture and engineering notes (source code stays private):
+
+<p>
+  <a href="https://github.com/flowser/aemms-showcase"><img src="https://img.shields.io/badge/AEMMS-Education_platform-7c3aed?style=for-the-badge&logo=github&logoColor=white" alt="AEMMS showcase"/></a>
+  <a href="https://github.com/flowser/networkmate-showcase"><img src="https://img.shields.io/badge/NetworkMate-Campus_network_control-0ea5e9?style=for-the-badge&logo=github&logoColor=white" alt="NetworkMate showcase"/></a>
+  <a href="https://github.com/flowser/trademate-showcase"><img src="https://img.shields.io/badge/TradeMate-Risk--first_MT5_EA-16a34a?style=for-the-badge&logo=github&logoColor=white" alt="TradeMate showcase"/></a>
+</p>
 
 ---
 
