@@ -21,6 +21,15 @@
   <img src="https://komarev.com/ghpvc/?username=flowser&style=flat-square&color=64748b&label=Profile+views" alt="Profile views"/>
 </p>
 
+<p align="center">
+  <a href="#what-i-can-build-for-you"><b>Services</b></a> ·
+  <a href="#featured-work"><b>Featured work</b></a> ·
+  <a href="#case-studies"><b>Case studies</b></a> ·
+  <a href="#experience"><b>Experience</b></a> ·
+  <a href="#tech-stack"><b>Tech stack</b></a> ·
+  <a href="#lets-talk"><b>Contact</b></a>
+</p>
+
 ---
 
 <table>
@@ -96,6 +105,8 @@ flowchart TB
 
 **Engineering highlights:** multi-tenant Django REST API with JWT auth, Celery workers and WebSocket events · Electron Forge desktop apps with auto-update and installers for Windows, macOS and Linux · Capacitor mobile app with offline sync · Ed25519-signed licence files · FastAPI AI service with InsightFace and Ollama that keeps all data on-site · Docker locally, Proxmox containers in production.
 
+➡️ **[Read the AEMMS case study](case-studies/aemms-platform.md)**
+
 ### 🌐 Live campus network build: Chesta Teachers Training College (2026)
 
 Lead engineer for a full production deployment at a college in West Pokot, Kenya:
@@ -106,6 +117,8 @@ Lead engineer for a full production deployment at a college in West Pokot, Kenya
 - **Self-hosted services:** the AEMMS platform, Mailcow email and Jitsi video conferencing, all running on Proxmox.
 - **NetworkMate control room:** a web portal that lets the IT team manage students, devices and exam mode without touching router configs.
 - **Full handover:** equipment inventory and operations runbooks for the client's own team.
+
+➡️ **[Read the campus network case study](case-studies/chesta-campus-network.md)**
 
 ### 🔌 Industrial, embedded and field engineering
 
@@ -141,6 +154,8 @@ Lead engineer for a full production deployment at a college in West Pokot, Kenya
     </td>
   </tr>
 </table>
+
+➡️ **[Read the embedded and IoT case study](case-studies/embedded-and-iot.md)**
 
 ### 🧩 More software I've shipped
 
@@ -193,6 +208,27 @@ Lead engineer for a full production deployment at a college in West Pokot, Kenya
       <img src="https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white"/>
       <img src="https://img.shields.io/badge/Vue-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white"/>
       <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white"/>
+    </td>
+  </tr>
+</table>
+
+---
+
+## Case studies
+
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <h4><a href="case-studies/aemms-platform.md">🏫 AEMMS platform</a></h4>
+      Architecture and decisions behind a campus-owned education platform: signed offline licensing, self-hosted real-time, on-prem AI.
+    </td>
+    <td width="33%" valign="top">
+      <h4><a href="case-studies/chesta-campus-network.md">🌐 Campus network</a></h4>
+      Dual-WAN failover, identity Wi-Fi, exam lockdown and self-hosted services for a rural college.
+    </td>
+    <td width="33%" valign="top">
+      <h4><a href="case-studies/embedded-and-iot.md">🔌 Embedded and IoT</a></h4>
+      PAYGO e-bike firmware, battery telemetry, a ventilator prototype, smart home and industrial field work.
     </td>
   </tr>
 </table>
@@ -267,11 +303,13 @@ I'm open to **fixed-scope projects, monthly retainers and long-term remote roles
   <img src="https://streak-stats.demolab.com/?user=flowser&theme=tokyonight&hide_border=true&background=0d1117" alt="Contribution streak"/>
 </p>
 
+<!-- WORKFLOW-IMAGES -->
+
 <sub>Most of my work lives in private client and product repositories, so public stats show only part of it. Happy to walk you through the code on a call.</sub>
 
 ---
 
-## 📬 Let's talk
+## Let's talk
 
 <table>
   <tr>
