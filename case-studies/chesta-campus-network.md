@@ -36,6 +36,7 @@ A rural college needed reliable internet for teaching and administration, a way 
 ## Architecture
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables':{'primaryColor':'#16162a','primaryTextColor':'#f0f0ff','primaryBorderColor':'#4f46e5','lineColor':'#0ea5e9','secondaryColor':'#0d0d1a','tertiaryColor':'#12121f','clusterBkg':'#0d0d1a','clusterBorder':'#4f46e5','titleColor':'#0ea5e9','edgeLabelBackground':'#16162a'}}}%%
 flowchart TB
   SL["Starlink<br/>primary"] --> GW
   AT["Airtel<br/>failover"] --> GW

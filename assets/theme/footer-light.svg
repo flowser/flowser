@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="170" viewBox="0 0 1200 170" role="img" aria-label="Let's build something great."><title>Let's build something great.</title>
+<style>
+  .f { animation: rise .8s cubic-bezier(.2,.7,.2,1) both; }
+  .d1 { animation-delay: .05s } .d2 { animation-delay: .15s } .d3 { animation-delay: .25s }
+  .d4 { animation-delay: .35s } .d5 { animation-delay: .45s } .d6 { animation-delay: .55s }
+  .cur { animation: blink 1.1s steps(1) infinite; }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  @keyframes blink { 50% { opacity: 0; } }
+</style><defs>
+  <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#4f46e5"/><stop offset="1" stop-color="#0ea5e9"/>
+  </linearGradient>
+  <radialGradient id="glowA" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#4f46e5" stop-opacity="0.16"/><stop offset="1" stop-color="#4f46e5" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glowB" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#0ea5e9" stop-opacity="0.14"/><stop offset="1" stop-color="#0ea5e9" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r="1" fill="#7878a0" fill-opacity="0.18"/>
+  </pattern>
+  <clipPath id="card"><rect width="1200" height="170" rx="24"/></clipPath>
+</defs><g clip-path="url(#card)">
+  <rect width="1200" height="170" fill="#fafafe"/>
+  <rect width="1200" height="170" fill="url(#dots)"/>
+  <ellipse cx="144" cy="-20" rx="520" ry="300" fill="url(#glowA)"/>
+  <ellipse cx="1056" cy="20" rx="440" ry="260" fill="url(#glowB)"/>
+</g>
+<rect x="0.5" y="0.5" width="1199" height="169" rx="24" fill="none" stroke="rgba(99,71,246,0.14)"/>
+<text class="f d1" x="600.0" y="78" text-anchor="middle" font-family="'Space Grotesk', Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="40" font-weight="700" letter-spacing="-0.8" fill="#0f0f1a">Let's build <tspan fill="url(#grad)">something great.</tspan></text>
+<text class="f d2" x="600.0" y="120" text-anchor="middle" font-family="'Space Grotesk', Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#3d3d5c">eng.felixnyachio@gmail.com  ·  +254 748 650 011  ·  Nairobi, UTC+3  ·  Remote worldwide</text></svg>
