@@ -27,6 +27,7 @@
 <p align="center">
   <a href="#what-i-can-build-for-you"><b>Services</b></a> ·
   <a href="#featured-work"><b>Featured work</b></a> ·
+  <a href="#private-work-index"><b>Private work</b></a> ·
   <a href="#case-studies"><b>Case studies</b></a> ·
   <a href="#experience"><b>Experience</b></a> ·
   <a href="#tech-stack"><b>Tech stack</b></a> ·
@@ -66,6 +67,37 @@
 
 ## What I can build for you
 
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'15px','primaryColor':'#f97316','primaryTextColor':'#ffffff','primaryBorderColor':'#fdba74','lineColor':'#0ea5e9','cScale0':'#4f46e5','cScale1':'#0284c7','cScale2':'#059669','cScale3':'#9333ea','cScale4':'#db2777','cScale5':'#b45309','cScale6':'#0d9488','cScaleLabel0':'#ffffff','cScaleLabel1':'#ffffff','cScaleLabel2':'#ffffff','cScaleLabel3':'#ffffff','cScaleLabel4':'#ffffff','cScaleLabel5':'#ffffff','cScaleLabel6':'#ffffff'}}}%%
+mindmap
+  root((Felix<br/>PCB to cloud))
+    💻 Software
+      Django · FastAPI · Laravel
+      Vue 3 · Next.js · TypeScript
+      Electron desktop apps
+      Capacitor offline mobile
+    🌐 Networks
+      MikroTik CHR dual-WAN
+      FreeRADIUS · UniFi Wi-Fi
+      Proxmox · Docker · BIND
+    🔌 Embedded
+      STM32 · Arduino · C/C++
+      BMS · PAYGO · MQTT
+      KiCad PCB
+    🧠 On-prem AI
+      Ollama · RAG
+      InsightFace face match
+    📈 Trading
+      MQL5 Expert Advisors
+      Python risk tooling
+    ⚡ Power and industrial
+      Solar PV · SMA inverters
+      Lifts · cranes · pumps
+    🧭 Architecture
+      Discovery · module maps
+      Costed delivery plans
+```
+
 | Service | What you get | Typical stack |
 |---|---|---|
 | **Web platforms and SaaS** | Multi-tenant APIs, admin dashboards, CMS, payments, real-time features | Django REST, Laravel, Node, Next.js, Vue 3, PostgreSQL, Redis, Stripe |
@@ -74,6 +106,7 @@
 | **Network and infrastructure** | Campus or office networks: dual-WAN failover, identity-based Wi-Fi, VLAN separation, virtualised servers, self-hosted mail and video | MikroTik RouterOS/CHR, FreeRADIUS, UniFi, Proxmox, Docker, BIND, Mailcow, Jitsi |
 | **Embedded and IoT** | Firmware, sensor telemetry to the cloud, device dashboards, pay-as-you-go hardware | C/C++, STM32, Arduino, Raspberry Pi, MQTT, KiCad |
 | **Trading systems** | Rule-based MT5 Expert Advisors with strict risk controls, backtesting and monitoring tools | MQL5, Python, pandas |
+| **Solution architecture** | Discovery workshops, system design, module maps and costed delivery plans before any code is written | Mermaid / C4-style diagrams, technical breakdowns, BOQs |
 
 <p align="center"><img width="100%" src="assets/theme/divider.svg" alt=""/></p>
 
@@ -81,33 +114,96 @@
 
 ## Featured work
 
-### 🏫 AEMMS: a full education management platform (product, in production)
+### 🏫 Flagship: AEMMS, an education management platform
 
-I designed and built **AEMMS**, a complete platform for colleges: a staff desktop app for authoring, marking and releasing exams; a locked-down exam client for students; an offline-first mobile app for field supervision; an on-premises AI service; and a central licensing server. It's deployed on campus hardware and running in production.
+AEMMS is a full ecosystem I designed and built for teacher-training and TVET (technical and vocational) colleges. Staff author, mark, and release exams on a desktop app; trainees sit exams on a locked-down desktop client; supervisors assess teaching practice and industrial attachment from a mobile app that works offline; and an on-campus AI service handles face verification and learning assistance. It's all tied together by a Django API and licensed from a central vendor server.
+
+<p>
+  <img src="https://img.shields.io/badge/Status-In_production-34d399?style=flat-square&labelColor=16162a" alt="In production"/>
+  <img src="https://img.shields.io/badge/Commits-1%2C400%2B_since_Feb_2026-4f46e5?style=flat-square&labelColor=16162a" alt="1,400+ commits"/>
+  <img src="https://img.shields.io/badge/Codebases-10-0ea5e9?style=flat-square&labelColor=16162a" alt="10 codebases"/>
+  <img src="https://img.shields.io/badge/Editions-KNEC_%C2%B7_CDACC-f97316?style=flat-square&labelColor=16162a" alt="Two regulator editions"/>
+  <img src="https://img.shields.io/badge/Platforms-Windows_%C2%B7_macOS_%C2%B7_Linux_%C2%B7_Android-9333ea?style=flat-square&labelColor=16162a" alt="Platforms"/>
+</p>
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'primaryColor':'#16162a','primaryTextColor':'#f0f0ff','primaryBorderColor':'#4f46e5','lineColor':'#0ea5e9','secondaryColor':'#0d0d1a','tertiaryColor':'#12121f','clusterBkg':'#0d0d1a','clusterBorder':'#4f46e5','titleColor':'#0ea5e9','edgeLabelBackground':'#16162a'}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontSize':'15px','primaryColor':'#16162a','primaryTextColor':'#f0f0ff','primaryBorderColor':'#4f46e5','lineColor':'#0ea5e9','clusterBkg':'#0d0d1a','clusterBorder':'#4f46e5','titleColor':'#0ea5e9','edgeLabelBackground':'#16162a'}}}%%
 flowchart TB
-  subgraph campus["On-site (campus network)"]
-    SM["SystemMate<br/>staff desktop"]
-    EM["ExamMate<br/>secure student client"]
-    PF["Field app<br/>offline-first mobile"]
-    AI["AI service<br/>face ID, RAG, agents"]
-    API[("Core API<br/>Django, Postgres, Redis, Celery")]
-    NM["NetworkMate<br/>network control"]
+  subgraph vendor["☁️ Savvytex cloud"]
+    VS["🔑 Vendor control plane<br/>plans · releases · Ed25519 licences"]:::cloud
   end
-  subgraph cloud["Savvytex cloud"]
-    STX["Vendor server<br/>licensing, CMS, sync"]
+  subgraph campus["🏫 Campus network · data stays on site"]
+    SM["🖥️ SystemMate<br/>staff desktop<br/>author · mark · release · LMS"]:::staff
+    EM["🔒 ExamMate<br/>locked-down trainee client"]:::trainee
+    PF["📱 Field app<br/>teaching practice · attachment<br/>offline-first"]:::field
+    API{{"⚙️ Institution API<br/>Django REST · JWT · Celery"}}:::core
+    DB[("🗄️ PostgreSQL<br/>Redis")]:::data
+    RT["⚡ Soketi<br/>live events"]:::data
+    AI["🧠 AI service<br/>face match · RAG tutor<br/>marking assist"]:::ai
+    NM["🛡️ NetworkMate<br/>Wi-Fi identity · exam mode"]:::net
   end
+  VS ==>|signed licence| API
   SM --> API
   EM --> API
-  PF --> API
-  AI --> API
-  API -.->|exam mode on| NM
-  STX -->|signed licences| API
+  PF -.->|sync when online| API
+  API <--> DB
+  API --> RT
+  API <-->|on-prem inference| AI
+  API -->|people and rooms for Wi-Fi login| NM
+  classDef staff fill:#4f46e5,stroke:#a5b4fc,stroke-width:2px,color:#ffffff
+  classDef trainee fill:#0284c7,stroke:#7dd3fc,stroke-width:2px,color:#ffffff
+  classDef field fill:#059669,stroke:#6ee7b7,stroke-width:2px,color:#ffffff
+  classDef ai fill:#9333ea,stroke:#d8b4fe,stroke-width:2px,color:#ffffff
+  classDef core fill:#ea580c,stroke:#fdba74,stroke-width:3px,color:#ffffff
+  classDef data fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#e0e7ff
+  classDef cloud fill:#db2777,stroke:#f9a8d4,stroke-width:2px,color:#ffffff
+  classDef net fill:#0d9488,stroke:#5eead4,stroke-width:2px,color:#ffffff
+  style vendor fill:#1a0b16,stroke:#db2777,stroke-width:2px,color:#f9a8d4
+  style campus fill:#0d0d1a,stroke:#4f46e5,stroke-width:2px,color:#7dd3fc
+  linkStyle default stroke:#0ea5e9,stroke-width:2px
 ```
 
-**Engineering highlights:** multi-tenant Django REST API with JWT auth, Celery workers and WebSocket events · Electron Forge desktop apps with auto-update and installers for Windows, macOS and Linux · Capacitor mobile app with offline sync · Ed25519-signed licence files · FastAPI AI service with InsightFace and Ollama that keeps all data on-site · Docker locally, Proxmox containers in production.
+**One exam, end to end:**
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'15px','actorBkg':'#4f46e5','actorBorder':'#a5b4fc','actorTextColor':'#ffffff','actorLineColor':'#6b6b8a','signalColor':'#0ea5e9','signalTextColor':'#0ea5e9','labelBoxBkgColor':'#f97316','labelBoxBorderColor':'#fdba74','labelTextColor':'#ffffff','loopTextColor':'#f97316','noteBkgColor':'#16162a','noteTextColor':'#f0f0ff','noteBorderColor':'#f97316','activationBkgColor':'#0ea5e9','activationBorderColor':'#7dd3fc','sequenceNumberColor':'#ffffff'}}}%%
+sequenceDiagram
+  autonumber
+  participant S as 🖥️ SystemMate
+  participant A as ⚙️ Institution API
+  participant N as 🛡️ NetworkMate
+  participant E as 🔒 ExamMate
+  participant I as 🧠 AI service
+  rect rgba(79, 70, 229, 0.18)
+    Note over S,N: Prepare
+    S->>A: Author paper, set exam type and window
+    N->>N: IT turns exam mode on: internet blocked, exam hosts allowed
+  end
+  rect rgba(14, 165, 233, 0.18)
+    Note over A,E: Sit
+    E->>A: Trainee signs in on the campus LAN
+    A->>I: Face match, if the exam type requires it
+    I-->>A: Verified (or proctor override)
+    E->>E: Display guard blocks extra monitors
+    E->>A: Submit answers
+  end
+  rect rgba(249, 115, 22, 0.18)
+    Note over S,E: Mark and release
+    S->>A: Mark, with AI assist on long answers
+    S->>A: Release results
+    A-->>E: Results and transcript available
+    N->>N: IT turns exam mode off
+  end
+```
+
+| App | Used by | What it does | Built with |
+|---|---|---|---|
+| **SystemMate** (KNEC and CDACC editions) | Staff, heads of department, registrar | Exam authoring, marking and release; LMS with syllabus, schemes of work, notes and live Campus Meet sessions; results and transcripts | Electron Forge, Vue 3, TypeScript, Pinia, TanStack Query |
+| **ExamMate** (KNEC and CDACC editions) | Trainees | Secure exam sitting with a display guard and site blocking; lessons; results | Electron, Vue 3, TypeScript |
+| **Practicum Field / Attachment Field** | Supervisors | Teaching-practice and industrial-attachment visits, rubrics and attendance, offline-first with sync | Capacitor, Vue 3 (Android) |
+| **Institution API** | All apps | Multi-tenant REST API, JWT auth, background jobs, real-time events, per-exam-type proctoring policy | Django REST, PostgreSQL, Redis, Celery, Soketi, nginx |
+| **AI service** | On campus | Face match, RAG learning assistant, marking assist and agents, on the college's own hardware | FastAPI, InsightFace, Ollama |
+| **Vendor control plane** | Savvytex | Plans, subscriptions, releases and Ed25519-signed licence files that work offline | Django, PostgreSQL |
 
 ➡️ **[Read the AEMMS case study](case-studies/aemms-platform.md)** · **[See screenshots in the showcase repo](https://github.com/flowser/aemms-showcase)**
 
@@ -122,9 +218,81 @@ Lead engineer for a full production deployment at a college in West Pokot, Kenya
 - **NetworkMate control room:** a web portal that lets the IT team manage students, devices and exam mode without touching router configs.
 - **Full handover:** equipment inventory and operations runbooks for the client's own team.
 
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'15px','primaryColor':'#16162a','primaryTextColor':'#f0f0ff','primaryBorderColor':'#4f46e5','lineColor':'#0ea5e9','clusterBkg':'#0d0d1a','clusterBorder':'#4f46e5','titleColor':'#0ea5e9','edgeLabelBackground':'#16162a'}}}%%
+flowchart TB
+  SL["🛰️ Starlink<br/>primary WAN"]:::wan
+  AT["📶 Airtel<br/>failover WAN"]:::wan
+  GW{{"🧭 MikroTik CHR gateway<br/>dual-WAN · firewall · exam mode"}}:::core
+  SL ==> GW
+  AT -.->|if Starlink drops| GW
+  subgraph lan["🏫 Campus LAN"]
+    direction TB
+    ST["🎓 Student network<br/>identity Wi-Fi"]:::trainee
+    SF["🧑‍💼 Staff network<br/>online during exams"]:::staff
+    RAD["🔐 FreeRADIUS + UniFi<br/>per-student login · device limits"]:::net
+    ST <--> RAD
+  end
+  subgraph px["🗄️ Proxmox VE host"]
+    direction TB
+    NM["🛡️ NetworkMate<br/>control room"]:::net
+    AE["🏫 AEMMS"]:::ai
+    MC["📧 Mailcow"]:::data
+    JT["🎥 Jitsi Meet"]:::data
+  end
+  GW --> ST
+  GW --> SF
+  GW -.-|RouterOS API · exam mode| NM
+  GW --> AE
+  GW --> MC
+  GW --> JT
+  classDef wan fill:#b45309,stroke:#fcd34d,stroke-width:2px,color:#ffffff
+  classDef core fill:#ea580c,stroke:#fdba74,stroke-width:3px,color:#ffffff
+  classDef trainee fill:#0284c7,stroke:#7dd3fc,stroke-width:2px,color:#ffffff
+  classDef staff fill:#4f46e5,stroke:#a5b4fc,stroke-width:2px,color:#ffffff
+  classDef net fill:#0d9488,stroke:#5eead4,stroke-width:2px,color:#ffffff
+  classDef ai fill:#9333ea,stroke:#d8b4fe,stroke-width:2px,color:#ffffff
+  classDef data fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#e0e7ff
+  style lan fill:#0d0d1a,stroke:#0284c7,stroke-width:2px,color:#7dd3fc
+  style px fill:#0d0d1a,stroke:#9333ea,stroke-width:2px,color:#d8b4fe
+  linkStyle default stroke:#0ea5e9,stroke-width:2px
+```
+
 ➡️ **[Read the campus network case study](case-studies/chesta-campus-network.md)**
 
 ### 🔌 Industrial, embedded and field engineering
+
+Firmware, electronics and cloud in one closed loop. This is the pattern behind the PAYGO e-bike and e-mobility battery-management projects:
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'15px','primaryColor':'#16162a','primaryTextColor':'#f0f0ff','primaryBorderColor':'#4f46e5','lineColor':'#0ea5e9','clusterBkg':'#0d0d1a','clusterBorder':'#4f46e5','titleColor':'#0ea5e9','edgeLabelBackground':'#16162a'}}}%%
+flowchart LR
+  subgraph vehicle["🛵 On the vehicle"]
+    CELLS["🔋 Battery cells"]:::hw
+    BMS["BMS board<br/>cell sensing"]:::hw
+    MCU["🧩 STM32 firmware<br/>embedded C"]:::staff
+    MOT["⚙️ Motor controller"]:::hw
+  end
+  subgraph cloud["☁️ Cloud"]
+    API{{"Laravel IoT API<br/>MySQL"}}:::core
+    DASH["📊 Vue dashboard<br/>alerts · fleet view"]:::trainee
+    PAY["💳 Payment status<br/>pay-as-you-go"]:::cloud
+  end
+  CELLS --> BMS --> MCU
+  MCU <-->|feedback| MOT
+  MCU ==>|cell telemetry| API
+  API --> DASH
+  PAY --> API
+  API -.->|enable / disable| MCU
+  classDef hw fill:#b45309,stroke:#fcd34d,stroke-width:2px,color:#ffffff
+  classDef staff fill:#4f46e5,stroke:#a5b4fc,stroke-width:2px,color:#ffffff
+  classDef core fill:#ea580c,stroke:#fdba74,stroke-width:3px,color:#ffffff
+  classDef trainee fill:#0284c7,stroke:#7dd3fc,stroke-width:2px,color:#ffffff
+  classDef cloud fill:#db2777,stroke:#f9a8d4,stroke-width:2px,color:#ffffff
+  style vehicle fill:#1a1206,stroke:#f59e0b,stroke-width:2px,color:#fcd34d
+  style cloud fill:#0d0d1a,stroke:#4f46e5,stroke-width:2px,color:#7dd3fc
+  linkStyle default stroke:#0ea5e9,stroke-width:2px
+```
 
 <table>
   <tr>
@@ -161,59 +329,46 @@ Lead engineer for a full production deployment at a college in West Pokot, Kenya
 
 ➡️ **[Read the embedded and IoT case study](case-studies/embedded-and-iot.md)**
 
-### 🧩 More software I've shipped
+<p align="center"><img width="100%" src="assets/theme/divider.svg" alt=""/></p>
+
+<sub><b>── PRIVATE PORTFOLIO</b></sub>
+
+## Private work index
+
+Most of what I build is client or product IP, so the source is private. This is the full list; I'm happy to demo any of it on a call.
 
 <table>
-  <tr>
-    <td width="50%" valign="top">
-      <h4>Insurance agency platform (upgo)</h4>
-      Customer-facing insurance platform with online payments.<br/><br/>
-      <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white"/>
-      <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white"/>
-      <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white"/>
-      <img src="https://img.shields.io/badge/Stripe-635BFF?style=flat-square&logo=stripe&logoColor=white"/>
-    </td>
-    <td width="50%" valign="top">
-      <h4><a href="https://github.com/flowser/trademate-showcase">TradeMate</a></h4>
-      MT5 scalping Expert Advisor with a Python monitoring app for 8 assets. Built risk-first: per-trade risk limits, daily loss caps, spread and news filters, no martingale.<br/><br/>
-      <img src="https://img.shields.io/badge/MQL5-1E90FF?style=flat-square&logo=metatrader&logoColor=white"/>
-      <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
-      <img src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white"/>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h4>Savvytex platform</h4>
-      A CMS-driven company website with a staff operations console for social publishing, portfolios and licensing, plus a certificate-verification service with a full audit log.<br/><br/>
-      <img src="https://img.shields.io/badge/Vue_3-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white"/>
-      <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white"/>
-      <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white"/>
-    </td>
-    <td width="50%" valign="top">
-      <h4>VoteMate</h4>
-      Election management with voter registers, ballots and live results over WebSockets, packaged as a self-contained Docker stack.<br/><br/>
-      <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white"/>
-      <img src="https://img.shields.io/badge/Vue-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white"/>
-      <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white"/>
-      <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h4>Nyumbané</h4>
-      A household budgeting product shipped as four clients (web, desktop, iOS and Android) on one API.<br/><br/>
-      <img src="https://img.shields.io/badge/Electron-47848F?style=flat-square&logo=electron&logoColor=white"/>
-      <img src="https://img.shields.io/badge/Capacitor-119EFF?style=flat-square&logo=capacitor&logoColor=white"/>
-      <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white"/>
-    </td>
-    <td width="50%" valign="top">
-      <h4>Research survey platform</h4>
-      A self-hosted alternative to SurveyMonkey with validated Likert instruments, deadlines, analytics and Excel export.<br/><br/>
-      <img src="https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white"/>
-      <img src="https://img.shields.io/badge/Vue-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white"/>
-      <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white"/>
-    </td>
-  </tr>
+  <tr><th colspan="3" align="left">🎓 Education, exams and campus software</th></tr>
+  <tr><td width="26%"><b><a href="#-flagship-aemms-an-education-management-platform">AEMMS platform</a></b></td><td>Education management and exam system: staff desktop, locked-down exam client, offline field app, institution API, on-prem AI, vendor licensing</td><td width="28%"><sub>Django · Electron · Vue 3 · Capacitor · FastAPI</sub></td></tr>
+  <tr><td><b>Exam server (2025)</b></td><td>Earlier exam backend with queue workers and schedulers</td><td><sub>Laravel · TypeScript · Docker</sub></td></tr>
+  <tr><td><b>VoteMate</b></td><td>Campus election platform: voter registers, ballots and live results over WebSockets, as one Docker stack</td><td><sub>Django · Vue 3 · PostgreSQL · Redis · Soketi</sub></td></tr>
+  <tr><td><b>Research survey platform</b></td><td>Self-hosted SurveyMonkey alternative with validated Likert instruments, deadlines, analytics and Excel export</td><td><sub>Laravel · Vue · MySQL</sub></td></tr>
+  <tr><td><b>Institutional IT</b></td><td>Active Directory and Group Policy rollout, admissions web app, library database, notice and tender portals, desktop-to-SMS integration</td><td><sub>Windows Server · web apps</sub></td></tr>
+
+  <tr><th colspan="3" align="left">🌐 Networks and infrastructure</th></tr>
+  <tr><td><b><a href="https://github.com/flowser/networkmate-showcase">NetworkMate</a></b></td><td>Campus network control room: identity Wi-Fi, device control, one-click exam lockdown</td><td><sub>Django · Vue 3 · MikroTik API · FreeRADIUS</sub></td></tr>
+  <tr><td><b><a href="#-live-campus-network-build-chesta-teachers-training-college-2026">Chesta campus stack</a></b></td><td>Dual-WAN, RADIUS + UniFi identity Wi-Fi, exam lockdown, self-hosted mail and video, full handover runbooks</td><td><sub>MikroTik CHR · Proxmox · Mailcow · Jitsi</sub></td></tr>
+  <tr><td><b>Campus AI Lab</b></td><td>Browser console for testing self-hosted LLMs and agents with a model picker, running on Proxmox</td><td><sub>Vue 3 · Ollama · FastAPI</sub></td></tr>
+
+  <tr><th colspan="3" align="left">🏢 Business platforms and SaaS</th></tr>
+  <tr><td><b>Savvytex platform</b></td><td>Company API and website: CMS-driven public site, staff operations console, portfolio, social publishing, field sync ledger and vendor licensing</td><td><sub>Django · Vue 3 · TypeScript · PostgreSQL</sub></td></tr>
+  <tr><td><b>upgo insurance platform</b></td><td>Customer-facing insurance agency platform with online payments</td><td><sub>Next.js · React · Node.js · MySQL · Stripe</sub></td></tr>
+  <tr><td><b>Nyumbané</b></td><td>Household budgeting product shipped as four clients (web, desktop, iOS, Android) on one API</td><td><sub>Django · Electron · Capacitor</sub></td></tr>
+  <tr><td><b>Industrial services marketplace</b></td><td>CMS where industrial clients post technical problems for engineers to solve</td><td><sub>Web CMS</sub></td></tr>
+
+  <tr><th colspan="3" align="left">💳 Fintech and trading</th></tr>
+  <tr><td><b><a href="https://github.com/flowser/trademate-showcase">TradeMate</a></b></td><td>Risk-first MT5 Expert Advisor and Python monitoring app for 8 assets: six filter layers, daily loss halt, no martingale</td><td><sub>MQL5 · Python · pandas</sub></td></tr>
+  <tr><td><b>Vending and M-Pesa</b></td><td>Vending machine controllers with mobile-money payment integration</td><td><sub>Embedded controllers · M-Pesa</sub></td></tr>
+
+  <tr><th colspan="3" align="left">🔌 Embedded, IoT and hardware</th></tr>
+  <tr><td><b>PAYGO e-bike</b></td><td>Pay-as-you-go e-mobility: STM32 firmware with a cloud payment-status loop</td><td><sub>STM32 · embedded C · Laravel · Vue</sub></td></tr>
+  <tr><td><b>E-mobility BMS</b></td><td>Battery cell telemetry to the cloud with web alerts and motor-controller feedback</td><td><sub>Firmware · MySQL · web UI</sub></td></tr>
+  <tr><td><b>Smart home</b></td><td>Home automation running in a real home, with an Android app</td><td><sub>Arduino · Raspberry Pi · Django · MQTT</sub></td></tr>
+  <tr><td><b>Ventilator prototype</b></td><td>Low-cost mechanical ventilator reverse-engineered with remote monitoring, plus real-time temperature and pressure firmware for medical equipment</td><td><sub>Firmware · web UI</sub></td></tr>
+  <tr><td><b>Field engineering</b></td><td>SMA inverter commissioning, control-PCB repair, lift and escalator electronics, overhead cranes, pumps, RO plants, dental-chair hydraulics</td><td><sub>Power electronics · PLC · diagnostics</sub></td></tr>
+
+  <tr><th colspan="3" align="left">🧭 Solution architecture</th></tr>
+  <tr><td><b>Intelligent maize milling platform</b> <sub>(proposal)</sub></td><td>End-to-end design for a milling business: weighbridge intake, production and yield, warehouses, sales, KRA e-invoicing, M-Pesa reconciliation, offline field sync and an AI roadmap. Delivered as a technical breakdown, module maps and costed packages</td><td><sub>Architecture · Mermaid · BOQ</sub></td></tr>
 </table>
 
 <p align="center"><img width="100%" src="assets/theme/divider.svg" alt=""/></p>
@@ -258,7 +413,26 @@ Lead engineer for a full production deployment at a college in West Pokot, Kenya
 | **2016 – now** | **Founder and Lead Engineer**, Savvytex Marines Ltd | Own product and engineering for the AEMMS platform and campus network systems. Architect, build, deploy and hand over production systems. |
 | **2026** | **Lead Engineer**, Chesta Teachers Training College deployment | Dual-WAN, identity Wi-Fi, exam lockdown, AEMMS, self-hosted mail and video, operations runbooks. |
 | **2015 – now** | **Freelance Full-Stack, Firmware and Electronics Engineer** | Insurance platform, PAYGO e-bikes, smart home IoT, vending and M-Pesa, industrial diagnostics. |
-| **2022** | **Technical Service Provider** for Gaviton Enterprises, C.P. Power EA, Neural Power and Konza Elevators | E-mobility battery management, SMA inverters, lift and escalator electronics, industrial plant. |
+| **2022** | **Technical Service Provider** for Gaviton Enterprises, C.P. Power EA, Neural Power, Konza Elevators and Latenight Dentist | E-mobility battery management, SMA inverters, lift and escalator electronics, industrial plant. |
+
+**Engineering track record:**
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'15px','primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#a5b4fc','lineColor':'#0ea5e9','titleColor':'#0ea5e9','cScale0':'#4f46e5','cScale1':'#0284c7','cScale2':'#b45309','cScale3':'#9333ea','cScale4':'#0d9488','cScale5':'#ea580c','cScaleLabel0':'#ffffff','cScaleLabel1':'#ffffff','cScaleLabel2':'#ffffff','cScaleLabel3':'#ffffff','cScaleLabel4':'#ffffff','cScaleLabel5':'#ffffff','cScaleInv0':'#0ea5e9','cScaleInv1':'#0ea5e9','cScaleInv2':'#0ea5e9','cScaleInv3':'#0ea5e9','cScaleInv4':'#0ea5e9','cScaleInv5':'#0ea5e9'}}%%
+timeline
+  2015 → : Freelance full-stack, firmware and electronics
+       : Insurance platform · smart home · vending with M-Pesa
+  2016 : Founded Savvytex Marines Ltd
+  2019 – 20 : Ventilator prototype with remote monitoring
+       : Medical temperature and pressure firmware
+  2022 : E-mobility BMS telemetry
+       : SMA inverters · lifts · escalators · cranes
+  2025 : Laravel exam server
+       : NetworkMate campus control room
+  2026 : AEMMS platform in production
+       : Chesta campus network build
+       : Savvytex platform · TradeMate · VoteMate
+```
 
 ## Credentials
 
@@ -302,6 +476,23 @@ Lead engineer for a full production deployment at a college in West Pokot, Kenya
 <sub><b>── PROCESS</b></sub>
 
 ## How we'd work together
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'15px','primaryColor':'#16162a','primaryTextColor':'#f0f0ff','primaryBorderColor':'#4f46e5','lineColor':'#0ea5e9','edgeLabelBackground':'#16162a'}}}%%
+flowchart LR
+  A(["💬 Message<br/>email · WhatsApp"]):::s1 --> B(["📞 30-min call<br/>your timezone"]):::s2
+  B --> C(["📝 Proposal<br/>scope · price"]):::s3
+  C --> D(["🛠️ Build<br/>weekly demos"]):::s4
+  D --> E(["🚀 Deploy<br/>cloud or on-prem"]):::s5
+  E --> F(["📚 Handover<br/>docs · runbooks"]):::s6
+  classDef s1 fill:#4f46e5,stroke:#a5b4fc,stroke-width:2px,color:#ffffff
+  classDef s2 fill:#0284c7,stroke:#7dd3fc,stroke-width:2px,color:#ffffff
+  classDef s3 fill:#0d9488,stroke:#5eead4,stroke-width:2px,color:#ffffff
+  classDef s4 fill:#059669,stroke:#6ee7b7,stroke-width:2px,color:#ffffff
+  classDef s5 fill:#ea580c,stroke:#fdba74,stroke-width:2px,color:#ffffff
+  classDef s6 fill:#db2777,stroke:#f9a8d4,stroke-width:2px,color:#ffffff
+  linkStyle default stroke:#0ea5e9,stroke-width:2px
+```
 
 1. **Message me** by email or WhatsApp with a short description of what you need.
 2. **30-minute discovery call** on Google Meet, Zoom or WhatsApp, at a time that suits your timezone.

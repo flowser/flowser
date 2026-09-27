@@ -36,19 +36,87 @@ A rural college needed reliable internet for teaching and administration, a way 
 ## Architecture
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'primaryColor':'#16162a','primaryTextColor':'#f0f0ff','primaryBorderColor':'#4f46e5','lineColor':'#0ea5e9','secondaryColor':'#0d0d1a','tertiaryColor':'#12121f','clusterBkg':'#0d0d1a','clusterBorder':'#4f46e5','titleColor':'#0ea5e9','edgeLabelBackground':'#16162a'}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontSize':'15px','primaryColor':'#16162a','primaryTextColor':'#f0f0ff','primaryBorderColor':'#4f46e5','lineColor':'#0ea5e9','clusterBkg':'#0d0d1a','clusterBorder':'#4f46e5','titleColor':'#0ea5e9','edgeLabelBackground':'#16162a'}}}%%
 flowchart TB
-  SL["Starlink<br/>primary"] --> GW
-  AT["Airtel<br/>failover"] --> GW
-  GW["MikroTik CHR gateway<br/>dual-WAN, exam mode"]
-  GW --> STU["Student network<br/>RADIUS identity Wi-Fi"]
-  GW --> STF["Staff network<br/>always online"]
-  GW --> PVE["Proxmox host"]
-  PVE --> AEMMS["AEMMS platform"]
-  PVE --> MAIL["Mailcow email"]
-  PVE --> MEET["Jitsi Meet"]
-  PVE --> NM["NetworkMate<br/>control room"]
-  NM -.->|drives| GW
+  SL["🛰️ Starlink<br/>primary WAN"]:::wan
+  AT["📶 Airtel<br/>failover WAN"]:::wan
+  GW{{"🧭 MikroTik CHR gateway<br/>dual-WAN · firewall · exam mode"}}:::core
+  SL ==> GW
+  AT -.->|if Starlink drops| GW
+  subgraph lan["🏫 Campus LAN"]
+    direction TB
+    ST["🎓 Student network<br/>identity Wi-Fi"]:::trainee
+    SF["🧑‍💼 Staff network<br/>online during exams"]:::staff
+    RAD["🔐 FreeRADIUS + UniFi<br/>per-student login · device limits"]:::net
+    ST <--> RAD
+  end
+  subgraph px["🗄️ Proxmox VE host"]
+    direction TB
+    NM["🛡️ NetworkMate<br/>control room"]:::net
+    AE["🏫 AEMMS"]:::ai
+    MC["📧 Mailcow"]:::data
+    JT["🎥 Jitsi Meet"]:::data
+  end
+  GW --> ST
+  GW --> SF
+  GW -.-|RouterOS API · exam mode| NM
+  GW --> AE
+  GW --> MC
+  GW --> JT
+  classDef wan fill:#b45309,stroke:#fcd34d,stroke-width:2px,color:#ffffff
+  classDef core fill:#ea580c,stroke:#fdba74,stroke-width:3px,color:#ffffff
+  classDef trainee fill:#0284c7,stroke:#7dd3fc,stroke-width:2px,color:#ffffff
+  classDef staff fill:#4f46e5,stroke:#a5b4fc,stroke-width:2px,color:#ffffff
+  classDef net fill:#0d9488,stroke:#5eead4,stroke-width:2px,color:#ffffff
+  classDef ai fill:#9333ea,stroke:#d8b4fe,stroke-width:2px,color:#ffffff
+  classDef data fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#e0e7ff
+  style lan fill:#0d0d1a,stroke:#0284c7,stroke-width:2px,color:#7dd3fc
+  style px fill:#0d0d1a,stroke:#9333ea,stroke-width:2px,color:#d8b4fe
+  linkStyle default stroke:#0ea5e9,stroke-width:2px
+```
+
+## Exam mode, step by step
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'15px','actorBkg':'#4f46e5','actorBorder':'#a5b4fc','actorTextColor':'#ffffff','actorLineColor':'#6b6b8a','signalColor':'#0ea5e9','signalTextColor':'#0ea5e9','labelBoxBkgColor':'#f97316','labelBoxBorderColor':'#fdba74','labelTextColor':'#ffffff','loopTextColor':'#f97316','noteBkgColor':'#16162a','noteTextColor':'#f0f0ff','noteBorderColor':'#f97316','activationBkgColor':'#0ea5e9','activationBorderColor':'#7dd3fc','sequenceNumberColor':'#ffffff'}}}%%
+sequenceDiagram
+  autonumber
+  participant IT as 🧑‍💻 IT officer
+  participant NM as 🛡️ NetworkMate
+  participant GW as 🧭 MikroTik gateway
+  participant ST as 🎓 Student devices
+  participant SF as 🧑‍💼 Staff devices
+  rect rgba(234, 88, 12, 0.16)
+    Note over IT,GW: Exam starts
+    IT->>NM: Turn exam mode on
+    NM->>GW: Enable exam firewall rules (RouterOS API)
+    NM->>GW: Allow each student's primary device only
+    GW-->>ST: Internet blocked, exam hosts allowed
+    GW-->>SF: No change, staff stay online
+  end
+  rect rgba(5, 150, 105, 0.16)
+    Note over IT,GW: Exam ends
+    IT->>NM: Turn exam mode off
+    NM->>GW: Disable exam firewall rules
+    GW-->>ST: Normal access restored
+  end
+```
+
+## WAN failover
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'15px','primaryColor':'#0d9488','primaryTextColor':'#ffffff','primaryBorderColor':'#5eead4','lineColor':'#0ea5e9','edgeLabelBackground':'#16162a','transitionColor':'#0ea5e9','transitionLabelColor':'#0ea5e9','stateLabelColor':'#ffffff','labelColor':'#ffffff'}}}%%
+stateDiagram-v2
+  direction LR
+  [*] --> Starlink
+  Starlink: 🛰️ Starlink active
+  Airtel: 📶 Airtel active
+  Starlink --> Airtel: health check fails
+  Airtel --> Starlink: Starlink recovers
+  classDef primary fill:#4f46e5,stroke:#a5b4fc,stroke-width:2px,color:#ffffff
+  classDef backup fill:#b45309,stroke:#fcd34d,stroke-width:2px,color:#ffffff
+  class Starlink primary
+  class Airtel backup
 ```
 
 ## Stack
