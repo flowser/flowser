@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Nyachio;Felix;;Eng.;
+FN:Eng. Felix Nyachio
+ORG:Savvytex Marines Ltd
+TITLE:Full-Stack & Systems Engineer (Remote)
+TEL;TYPE=CELL,VOICE:+254748650011
+EMAIL;TYPE=INTERNET,PREF:eng.felixnyachio@gmail.com
+URL:https://github.com/flowser
+X-SOCIALPROFILE;TYPE=whatsapp:https://wa.me/254748650011
+ADR;TYPE=WORK:;;;Nairobi;;;Kenya
+TZ:+03:00
+NOTE:Full-stack, systems, network and embedded engineer. Available for remote contracts worldwide.
+END:VCARD
